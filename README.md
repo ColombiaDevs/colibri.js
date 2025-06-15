@@ -1,17 +1,50 @@
-# Colibrí.js — Developer Guide
+# Colibrí.js
+
+> **"Simplicity, modularity and expressiveness for modern frontend"**
 
 <!-- Badges -->
 [![npm version](https://img.shields.io/npm/v/@colombiadevs/colibrijs.svg)](https://www.npmjs.com/package/@colombiadevs/colibrijs)
 [![Coverage Status](https://img.shields.io/codecov/c/github/ColombiaDevs/colibrijs.svg)](https://codecov.io/gh/ColombiaDevs/colibrijs)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-**Colibrí.js** is an experimental frontend micro-framework written in modern JavaScript. Created by and for the [r/ColombiaDevs](https://www.reddit.com/r/ColombiaDevs/) community, the project prioritizes simplicity, learning, and full transparency into how a UI framework works under the hood.
+**Colibrí.js** is a lightweight JavaScript framework for building reactive user interfaces. Created by and for the [r/ColombiaDevs](https://www.reddit.com/r/ColombiaDevs/) community, the project prioritizes simplicity, learning, and full transparency into how a UI framework works under the hood.
 
-This repository contains the framework's source code and tools to support community-driven development.
+This repository contains the framework's source code and tools to support community-driven development with a focus on educational exploration and practical application.
 
 ---
 
-## 📦 Requirements
+## 🚀 Quick Start
+
+### Installation
+
+```bash
+# Using npm
+npm install @colombiadevs/colibrijs
+
+# Using yarn
+yarn add @colombiadevs/colibrijs
+```
+
+### Basic Example
+
+```js
+import { createApp, h, ref } from '@colombiadevs/colibrijs';
+
+function Counter() {
+  const count = ref(0);
+
+  return () => h('div', null, [
+    h('p', null, `Count: ${count.value}`),
+    h('button', { onClick: () => count.value++ }, 'Increment')
+  ]);
+}
+
+createApp(Counter).mount('#app');
+```
+
+---
+
+## 💾 Requirements
 
 - **Node.js** ≥ 18
 - **npm** ≥ 8 or **Yarn** ≥ 1.22
@@ -20,12 +53,37 @@ This repository contains the framework's source code and tools to support commun
 
 ---
 
-## 🧭 Project Goals
+## 🧭 Framework Philosophy
 
-- Build a lightweight, reactive framework with zero dependencies
-- Serve as an educational tool for aspiring frontend developers
-- Emphasize clarity, modularity, and community collaboration
-- Enable real-world projects through simplicity and extensibility
+- **Simplicity**: Minimal and intuitive APIs with zero dependencies
+- **Transparency**: Understandable internal workings
+- **Modularity**: Use only what you need
+- **Extensibility**: Designed to be extended through hooks and plugins
+- **Pedagogy**: Facilitates learning of modern UI concepts
+
+All framework components are designed following the SOLID principles, ensuring maintainability and flexibility.
+
+---
+
+## 📖 Documentation
+
+### Main Guides
+
+- [🚀 Getting Started](./docs/getting-started.md) - First steps with Colibrí.js
+- [📚 API Reference](./docs/api-reference.md) - Complete documentation of all APIs
+- [🔄 Hooks](./docs/hooks-reference.md) - Detailed guide on the hooks system
+- [🏛️ Architecture](./docs/architecture.md) - Framework structure and design
+
+### Development and Contribution
+
+- [🚣️ Roadmap](./docs/roadmap.md) - Detailed development plan by phases
+- [📝 Development Plan](./docs/development-plan.md) - Fundamental principles and organization
+- [🧩 Patterns](./docs/patterns.md) - Component patterns and best practices
+
+### Principles and Concepts
+
+- [🔧 SOLID Principles](./docs/solid-principles.md) - Application of SOLID principles in Colibrí.js
+- [📕 Glossary](./docs/glossary.md) - Technical terms and key concepts
 
 ---
 
@@ -142,11 +200,15 @@ Internal builds are not yet published. Stable builds will be versioned semantica
 
 ---
 
-## 🧑‍💻 Contributing
+## 🤜 Contributing
 
 This project thrives on collaboration! To get involved:
 
 - Review [CONTRIBUTING.md](CONTRIBUTING.md) for code standards and workflow
+- Before getting started, please review:
+  - [Development Plan](./docs/development-plan.md) to understand the project direction
+  - [Roadmap](./docs/roadmap.md) to learn about specific microtasks
+  - [SOLID Principles](./docs/solid-principles.md) to maintain architectural coherence
 - Join the discussion on [r/ColombiaDevs](https://www.reddit.com/r/ColombiaDevs/)
 - Submit feedback, bugs, ideas, or PRs 🚀
 
